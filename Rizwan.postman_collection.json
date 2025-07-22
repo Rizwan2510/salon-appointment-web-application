@@ -1,0 +1,1532 @@
+{
+	"info": {
+		"_postman_id": "efb6f90c-6d87-42ab-ac32-eefe98e69038",
+		"name": "Rizwan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26215730"
+	},
+	"item": [
+		{
+			"name": "The Salon Portal",
+			"item": [
+				{
+					"name": "KeyCloak",
+					"item": [
+						{
+							"name": "get access token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "salon-portal-client",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "prqjrvceWQTyqFPsYy03C8TaQEwy6cwU",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "openid email profile",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "rizwan",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/realms/master/protocol/openid-connect/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"realms",
+										"master",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxcWZubVFROWFqQXM0Z3JhQzNvS0R2b01vNUdLTWJDYTdSeTBFbXFpdnFzIn0.eyJleHAiOjE3NTE1MjI3NzcsImlhdCI6MTc1MTUyMjcxNywianRpIjoib25ydHJvOmEyNDQ0YTRlLTFhOTItNGYxOC1iNzdhLTMzZTExNTI2MWRkZiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvbWFzdGVyIiwiYXVkIjpbIm1hc3Rlci1yZWFsbSIsImFjY291bnQiXSwic3ViIjoiNDY2YjY2YjYtMTk5Yi00MDkxLWJhZjAtZmY5ZWFlYjY3ZTYxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2Fsb24tcG9ydGFsLWNsaWVudCIsInNpZCI6IjQ0ZmNkMTljLTE2YjUtNDNmZi1hZmE4LTE5NWI0ODdlMDcwNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImNyZWF0ZS1yZWFsbSIsImRlZmF1bHQtcm9sZXMtbWFzdGVyIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFzdGVyLXJlYWxtIjp7InJvbGVzIjpbInZpZXctcmVhbG0iLCJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiUml6d2FuIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicml6d2FuIiwiZ2l2ZW5fbmFtZSI6IlJpendhbiIsImVtYWlsIjoicml6d2FuQGdtYWlsLmNvbSJ9.UIPd5kBpl6CqPQ18kueeX1-bpRcno9iA1jwqJq2lSi1zZwZVuWH84F_zHuEIgeCzqIBWDAmO8_6URLayXs_VqJTQxbkxmGEXnZmPYP3RjW3zM38DuROWxxVHGqtv6l0itf4SO0Cse1N5vH-X5kfcTtB7VNG5J_6i8BD_UYNqT3vqL3AQ8LjoUn_d2H4xw5N0LjtO0a2kUpqAhKRr856cy8NgNpfaNo9hb9DYktq5R9p2pnwO5t3t0ZJxJ9yvDp6OjjXfZEIrJBf10HoucHWHuX8ZNgiulqOrmPB0lj6uh1wopLqsg9KsQfxA2aPLO3h5LyIWcFENObJdXOzXBExW8w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"seth\",\r\n    \"enabled\": true,\r\n    \"firstName\": \"Seth\",\r\n    \"lastName\": \"Rollins\",\r\n    \"email\": \"seth@gmail.com\",\r\n    \"credentials\": [\r\n        {\r\n        \"type\": \"password\",\r\n        \"value\": \"123456\",\r\n        \"temporary\": false\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/admin/realms/master/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"realms",
+										"master",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get available roles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxcWZubVFROWFqQXM0Z3JhQzNvS0R2b01vNUdLTWJDYTdSeTBFbXFpdnFzIn0.eyJleHAiOjE3NTE1MjY1OTYsImlhdCI6MTc1MTUyNjUzNiwianRpIjoib25ydHJvOjJlNmQ0MTA1LWFhMjUtNDM2MS1hMTRlLTkxOGRmNzA5Mjk4MyIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvbWFzdGVyIiwiYXVkIjpbIm1hc3Rlci1yZWFsbSIsImFjY291bnQiXSwic3ViIjoiNDY2YjY2YjYtMTk5Yi00MDkxLWJhZjAtZmY5ZWFlYjY3ZTYxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2Fsb24tcG9ydGFsLWNsaWVudCIsInNpZCI6IjRlMWMzNjIxLTg3OTUtNDUzMy1hOGQxLWIzYmI2Mjc0MjcxNSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImNyZWF0ZS1yZWFsbSIsImRlZmF1bHQtcm9sZXMtbWFzdGVyIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFzdGVyLXJlYWxtIjp7InJvbGVzIjpbInZpZXctcmVhbG0iLCJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiUml6d2FuIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicml6d2FuIiwiZ2l2ZW5fbmFtZSI6IlJpendhbiIsImVtYWlsIjoicml6d2FuQGdtYWlsLmNvbSJ9.OutDbD1zzTzlDZE3ZWQ9kmuvyjm7VZLi4hBwxcWFuxBuLzbzSBX6wtnS1fYoqSwdnQs6qF4LQukgfjs9qMSCN6yuuXTcnSfzguHVfyDGMBkRBPaoacqnBjono3Q8iRJx7YrpgOLIrL92RzCdeuFphlc5oeUSgYhgkmk2JyC6KnwNyCyLB243eczBHr-DnMs8vaKlleD4fC_Y1F29nUV1vY7DnHGmtmUJtG1sEh-W5nUDzEbV_zIK0ApTvRHFwpsuBREUuVcTAvMYkzLajbTZtmELPaT9YIxaChOuKtZAaVm0gJoeEm3Yya8BFBLwjfBkxZUx60Qu-jcWiV0hF-eUpw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/admin/realms/master/users/ce77ccec-1408-426f-84ec-43fc3ec8e7e1/role-mappings/clients/00f57a24-54f0-4ac9-9f33-baeba1e3bc09/available",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"realms",
+										"master",
+										"users",
+										"ce77ccec-1408-426f-84ec-43fc3ec8e7e1",
+										"role-mappings",
+										"clients",
+										"00f57a24-54f0-4ac9-9f33-baeba1e3bc09",
+										"available"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get role by username",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxcWZubVFROWFqQXM0Z3JhQzNvS0R2b01vNUdLTWJDYTdSeTBFbXFpdnFzIn0.eyJleHAiOjE3NTE1Mjc2MDcsImlhdCI6MTc1MTUyNzU0NywianRpIjoib25ydHJvOmQyNjE4OThlLWE0YjktNDFjYS1iMGZkLTFiODg2NjcyY2FhZSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvbWFzdGVyIiwiYXVkIjpbIm1hc3Rlci1yZWFsbSIsImFjY291bnQiXSwic3ViIjoiNDY2YjY2YjYtMTk5Yi00MDkxLWJhZjAtZmY5ZWFlYjY3ZTYxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2Fsb24tcG9ydGFsLWNsaWVudCIsInNpZCI6ImFhMTM3NTQxLWZkN2UtNGMzZi1hM2IxLTA5M2Y3NDAyZDg0NiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImNyZWF0ZS1yZWFsbSIsImRlZmF1bHQtcm9sZXMtbWFzdGVyIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFzdGVyLXJlYWxtIjp7InJvbGVzIjpbInZpZXctcmVhbG0iLCJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiUml6d2FuIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicml6d2FuIiwiZ2l2ZW5fbmFtZSI6IlJpendhbiIsImVtYWlsIjoicml6d2FuQGdtYWlsLmNvbSJ9.OGtyUDo9D_RM8bJ4JUVGYgy8osbbvSeV5X4rdt9POb8uyHmm7KIKdf3oo77Z3nrPsmJCEQrh5r7zVrvmHjknuLodnle9dcBUaX4U-o-IkH_yBeyFw_HfDWjptR-C8vYOhGWKo31u1PCjrIt9mJdTzDjmbuA8CetdjfpSxs2BQlWkwQgv58nBv846728VVMAPIsheKI_vNEDNrQUayJ6zskjTZiXN1P0nLOczu99_WDaI2L-QCrfJTiY7wHZ3-2iwkn26VQbYPZrTPNo3nnJOI9Fkx47frn-rMBGiMXjqCWajRPPwD2UvTVMNji803SUKIu0rU3ZF2ZO8YRA5oSO46A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/admin/realms/master/clients/00f57a24-54f0-4ac9-9f33-baeba1e3bc09/roles/CUSTOMER",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"realms",
+										"master",
+										"clients",
+										"00f57a24-54f0-4ac9-9f33-baeba1e3bc09",
+										"roles",
+										"CUSTOMER"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user by username",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxcWZubVFROWFqQXM0Z3JhQzNvS0R2b01vNUdLTWJDYTdSeTBFbXFpdnFzIn0.eyJleHAiOjE3NTE1MjcyNzcsImlhdCI6MTc1MTUyNzIxNywianRpIjoib25ydHJvOjUxOWJjMDYyLTljZGItNDdlNi05YmJjLTAxYmM1ZjI5N2IwMyIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvbWFzdGVyIiwiYXVkIjpbIm1hc3Rlci1yZWFsbSIsImFjY291bnQiXSwic3ViIjoiNDY2YjY2YjYtMTk5Yi00MDkxLWJhZjAtZmY5ZWFlYjY3ZTYxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2Fsb24tcG9ydGFsLWNsaWVudCIsInNpZCI6IjZjN2I2Y2FiLWVmNjctNGM4NC04NWVmLTZjNDg3ZTZmNGQ0NiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImNyZWF0ZS1yZWFsbSIsImRlZmF1bHQtcm9sZXMtbWFzdGVyIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibWFzdGVyLXJlYWxtIjp7InJvbGVzIjpbInZpZXctcmVhbG0iLCJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiUml6d2FuIiwicHJlZmVycmVkX3VzZXJuYW1lIjoicml6d2FuIiwiZ2l2ZW5fbmFtZSI6IlJpendhbiIsImVtYWlsIjoicml6d2FuQGdtYWlsLmNvbSJ9.Gb7-yqLiF0O1-XmMWp9jNylzBgsGognwLMkgVYGw7tKyG5AMpSr6SmGGVPwpgrR0b04Hn_5Xe5y_zpaUk3Qb5fW-sxRLaYAOcZzf-0SVo6mDc8ILjgmQoDdJZkr2jRCyKVNl18bdORY-L7HPvWNJqVtUjAX9jh4Gno4Lio541ZYo1cDPPceAwnL14RCe81Rhu7831cQ9WbWMDkXktZsTH1V-X154OdiwnTc-ABbMjW15PHqmj4K8ne2yXxwGnbtDiVIqMU7FVN8OzhTiuayW0Yah9Byi3rIoKUGE4Eo1dj3CZ9fxqNUl8lbT3JNVFPxMEcDJ8oFYcv0kWByL5wN6_A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/admin/realms/master/users?username=goldberg",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"realms",
+										"master",
+										"users"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "goldberg"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "create user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\":\"Rizwan Shaikh\",\r\n    \"email\":\"RizwanShaikh@gmail\",\r\n    \"phone\":\"9877537534\",\r\n    \"role\":\"CUSTOMER\",\r\n    \"password\":\"123456\",\r\n    \"userName\":\"Empire\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/users/252",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"users",
+										"252"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\":\"Rizwan Shaikh\",\r\n    \"email\":\"RizwanShaikh@gmail.com\",\r\n    \"phone\":\"9877537534\",\r\n    \"role\":\"Customer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/users/302",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"users",
+										"302"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/users/352",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"users",
+										"352"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user profile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/users/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"users",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Salon",
+					"item": [
+						{
+							"name": "create salon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{salon_jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Rockstar\",\r\n    \"images\":[\"img1\",\"img2\"],\r\n    \"address\":\"Gurgaon, Delhi\",\r\n    \"phone\":\"1234567890\",\r\n    \"email\":\"rockstar@gmail.com\",\r\n    \"city\":\"Delhi\",\r\n    \"openTime\":\"09:00\",\r\n    \"closeTime\":\"21:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/salons",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"salons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all salon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/salons",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"salons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get salon by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5002/api/salons/52",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"api",
+										"salons",
+										"52"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search salon by city",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Habibs\",\r\n    \"images\":[\"img1\",\"img2\"],\r\n    \"address\":\"Baner, Pune\",\r\n    \"phone\":\"1234567890\",\r\n    \"email\":\"habibs@gmail.com\",\r\n    \"city\":\"Pune\",\r\n    \"ownerId\":\"123\",\r\n    \"openTime\":\"09:00\",\r\n    \"closeTime\":\"21:00\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5002/api/salons/search?city=ud",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"api",
+										"salons",
+										"search"
+									],
+									"query": [
+										{
+											"key": "city",
+											"value": "ud"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Salon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{salon_jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Habibs\",\r\n    \"images\":[\"img1\",\"img2\"],\r\n    \"address\":\"Baner, Pune\",\r\n    \"phone\":\"1234567890\",\r\n    \"email\":\"habibs@gmail.com\",\r\n    \"city\":\"Udgir\",\r\n    \"ownerId\":\"23\",\r\n    \"openTime\":\"09:00\",\r\n    \"closeTime\":\"21:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/salons/32",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"salons",
+										"32"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get salon by owner id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{salon_jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"images\":[\"img1\",\"img2\",\"img3\",\"img4\"],\r\n    \"ownerId\":\"2\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/salons/owner",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"salons",
+										"owner"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Create Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{salon_jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Massgae\",\r\n    \"image\":\"img5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/categories/salon-owner",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"categories",
+										"salon-owner"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Categories by Salon Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"images\":[\"img1\",\"img2\",\"img3\",\"img4\"],\r\n    \"ownerId\":\"2\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/categories/salon/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"categories",
+										"salon",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get category by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"images\":[\"img1\",\"img2\",\"img3\",\"img4\"],\r\n    \"ownerId\":\"2\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5003/api/categories/53",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"api",
+										"categories",
+										"53"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete category",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5003/api/categories/salon-owner/102",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"api",
+										"categories",
+										"salon-owner",
+										"102"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get category by id and salon id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Offerings",
+					"item": [
+						{
+							"name": "create Offering",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Massage\",\r\n    \"image\":\"img1\",\r\n    \"description\":\"Nuru massage\",\r\n    \"price\":\"4000\",\r\n    \"duration\":\"120\",\r\n    \"salonId\":\"1\",\r\n    \"categoryId\":\"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5004/api/offerings/owner",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5004",
+									"path": [
+										"api",
+										"offerings",
+										"owner"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all offerings by salon",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Massage\",\r\n    \"image\":\"img1\",\r\n    \"description\":\"Nuru massage\",\r\n    \"price\":\"4000\",\r\n    \"duration\":\"120\",\r\n    \"salonId\":\"1\",\r\n    \"categoryId\":\"3\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/offerings/salon/252",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offerings",
+										"salon",
+										"252"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get offering by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offerings/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offerings",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get offerings by ids",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Massage\",\r\n    \"image\":\"img1\",\r\n    \"description\":\"Nuru massage\",\r\n    \"price\":\"4000\",\r\n    \"duration\":\"120\",\r\n    \"salonId\":\"1\",\r\n    \"categoryId\":\"3\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/offerings/list/1,2,3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offerings",
+										"list",
+										"1,2,3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update offering",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"salonId\":\"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5004/api/offerings/owner/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5004",
+									"path": [
+										"api",
+										"offerings",
+										"owner",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bookings",
+					"item": [
+						{
+							"name": "create booking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"startTime\":\"2025-05-29T11:45:00\",\r\n    \"serviceIds\":[202]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/bookings?salonId=252&paymentMethod=RAZORPAY",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"bookings"
+									],
+									"query": [
+										{
+											"key": "salonId",
+											"value": "252"
+										},
+										{
+											"key": "paymentMethod",
+											"value": "RAZORPAY"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get bookings by customer",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"startTime\":\"2025-05-26T22:15:00\",\r\n    \"serviceIds\":[1]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5005/api/bookings/customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"api",
+										"bookings",
+										"customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get bookings by salon",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"startTime\":\"2025-05-26T22:15:00\",\r\n    \"serviceIds\":[1]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5005/api/bookings/salon",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"api",
+										"bookings",
+										"salon"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get booking by Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"startTime\":\"2025-05-26T22:15:00\",\r\n    \"serviceIds\":[1]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5005/api/bookings/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"api",
+										"bookings",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update booking",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"CONFIRMED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5005/api/bookings/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"api",
+										"bookings",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get booked slots",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"CONFIRMED\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5005/api/bookings/slots/salon/1/date",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"api",
+										"bookings",
+										"slots",
+										"salon",
+										"1",
+										"date"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get report",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5005/api/bookings/report",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"api",
+										"bookings",
+										"report"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "SignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Bob\",\r\n    \"lastName\":\"Orton\",\r\n    \"email\":\"bob@gmail.com\",\r\n    \"username\":\"bob\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"CUSTOMER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"username\":\"bob\",\r\n   \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get access token from refresh token",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Bron\",\r\n    \"lastName\":\"Breaker\",\r\n    \"email\":\"bron@gmail.com\",\r\n    \"username\":\"breaker\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"CUSTOMER\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/auth/access-token/refresh-token/{{refresh_token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"access-token",
+										"refresh-token",
+										"{{refresh_token}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Notification",
+					"item": [
+						{
+							"name": "create notification",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"salonId\":252,\r\n    \"userId\":252,\r\n    \"bookingId\":110,\r\n    \"description\":\"Booking for Massage\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/notification",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get notifications by user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/notification/user/252",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"notification",
+										"user",
+										"252"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all notification by salon",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{salon_jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/notification/salon-owner/252",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"notification",
+										"salon-owner",
+										"252"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mark notification as read",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/notification/3/read",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"notification",
+										"3",
+										"read"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "create review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt2}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"reviewText\":\"Very bad experience, Highly recommend\",\r\n    \"rating\":\"0.75\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5008/api/review/salon/202",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5008",
+									"path": [
+										"api",
+										"review",
+										"salon",
+										"202"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get review by salon",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"reviewText\":\"Excellent Service, Highly recommend\",\r\n    \"rating\":\"4.75\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/review/salon/252",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"review",
+										"salon",
+										"252"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"reviewText\":\"Excellent Service, Highly recommend\",\r\n    \"rating\":\"4.75\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/review/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"review",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete review",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
